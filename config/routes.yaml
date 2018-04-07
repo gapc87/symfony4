@@ -1,3 +1,13 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+test:
+  path:     /test/{_locale}/{year}/{slug}.{_format}
+  controller: App\Controller\TestController::index
+  defaults:
+      _format: html
+  requirements:
+      _locale:  en|fr
+      _format:  html|rss
+      year:     \d+
